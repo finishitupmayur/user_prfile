@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = trim($_POST['password']);
     $confirm_password = trim($_POST['confirm_password']);
 
-    // Backend validation
+    
     if (empty($name)) {
         $errors[] = "Username is required.";
     }
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (empty($errors)) {
-        // Hash the password before storing
+        
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
         $checkStmt = $conn->prepare("SELECT id FROM users WHERE email = ?");
