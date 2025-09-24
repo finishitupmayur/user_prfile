@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->fetch();
 
         if (password_verify($password, $hashed_password)) {
-            // Login success
+            
             $_SESSION['user_id'] = $id;
             $_SESSION['user_name'] = $name;
             header("Location: profile.php");
@@ -62,3 +62,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 </body>
 </html>
+
